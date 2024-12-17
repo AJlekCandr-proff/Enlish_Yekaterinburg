@@ -11,4 +11,4 @@ def index(request) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, 'school/index.html')
+    return render(request, 'school/static/index.html')
