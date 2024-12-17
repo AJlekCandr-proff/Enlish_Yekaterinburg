@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,6 +41,18 @@ MIDDLEWARE = [
 
 
 ROOT_URLCONF = "English_Ekb.urls"
+
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "superhero",
+    "sticky_actions": True,
+    "actions_sticky_top": True,
+}
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Строй-Ростов.pф",
+    "site_brand": "Строй-Ростов.рф",
+}
 
 
 TEMPLATES = [
