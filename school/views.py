@@ -12,4 +12,4 @@ def index(request: WSGIRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, 'school/static/index.html')
+    return render(request, '../templates/school/index.html')
