@@ -1,0 +1,10 @@
+html, body {height: 100%}
+
+
+.header .header-menu {
+    display: inline-flex;
+    text-align: center;
+    list-style: none;
+}
+
+.header-menu li {text-decoration: none}
