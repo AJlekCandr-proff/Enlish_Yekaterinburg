@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('PROJECT_KEY')
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('PROJECT_URL')]
 
@@ -51,8 +51,8 @@ JAZZMIN_UI_TWEAKS = {
 }
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Строй-Ростов.pф",
-    "site_brand": "Строй-Ростов.рф",
+    "site_title": "Онлайн-школа английского языка",
+    "site_brand": "Онлайн-школа английского языка",
 }
 
 
