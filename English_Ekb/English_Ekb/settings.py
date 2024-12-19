@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'django.middleware.locale.LocaleMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -52,7 +53,16 @@ JAZZMIN_UI_TWEAKS = {
 
 JAZZMIN_SETTINGS = {
     "site_title": "Онлайн-школа английского языка",
-    "site_brand": "Онлайн-школа английского языка",
+    "site_header": "Английский в Екатеринбурге",
+    "welcome_sign": "Добро пожаловать в панель администрирования",
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]}
+    ],
+    "related_modal_active": False,
+    "navigation_expanded": True,
+    "show_sidebar": True,
+    "site_brand": "Панель",
+    "language_chooser": True,
 }
 
 
