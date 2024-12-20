@@ -1,0 +1,44 @@
+.header-main {
+    display: flex;
+    background-color: #AFF4FF;
+    width: 100%;
+    height: 200px;
+}
+
+.header-content {
+    margin: 20px 100px 20px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 650;
+}
+
+.header .header-menu {
+    display: flex;
+    text-align: center;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.header-menu li {
+    text-decoration: none;
+    display: inline-flex;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.account-buttons {
+    display: flex;
+    text-align: center;
+    width: 300px;
+    justify-content: space-between;
+}
+
+
+.logo-main {width: 191px; height: 115px}
+
+.header-icons {display: flex; justify-content: space-between; width: 120px}

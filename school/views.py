@@ -12,7 +12,7 @@ def index(request: WSGIRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, '../templates/school/index.html')
+    return render(request, '../templates/school/pages/home.html')
 
 
 def teachers(request: WSGIRequest) -> HttpResponse:
@@ -24,7 +24,7 @@ def teachers(request: WSGIRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, '../templates/school/teachers.html')
+    return render(request, '../templates/school/pages/teachers.html')
 
 
 def account(request: WSGIRequest) -> HttpResponse:
@@ -36,4 +36,4 @@ def account(request: WSGIRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, '../templates/school/account.html')
+    return render(request, '../templates/school/pages/account.html')
