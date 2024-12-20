@@ -3,12 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Личный кабинет</title>
+
+        <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css">
     </head>
 
-    <body>
+    <body style="margin: 0">
         <main>
-            <div>
-                
+            {% include "school/components/header.html" %}
+            <div class="account">
+                <h1>Аккаунт пользователя</h1>
             </div>
         </main>
     </body>

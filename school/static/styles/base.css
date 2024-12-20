@@ -2,8 +2,10 @@ html {
   overflow-y: scroll;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  margin: 0;
 }
 
+body {margin: 0}
 
 main {display: block}
 
