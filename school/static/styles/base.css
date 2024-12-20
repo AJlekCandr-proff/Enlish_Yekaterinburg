@@ -1,13 +1,22 @@
 html, body {height: 100%}
 
 
+.home-page {width: 1440px; margin-inline: auto}
+
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .header .header-menu {
-    margin: 50px auto 50px auto;
     display: flex;
     text-align: center;
     list-style: none;
     justify-content: space-between;
-    width: 1440px;
 }
 
 .header-menu li {
