@@ -5,7 +5,8 @@
     height: 200px;
 }
 
-.header-content {
+
+.header-main .header-content {
     margin: 20px 100px 20px 100px;
     display: flex;
     flex-direction: row;
@@ -16,12 +17,39 @@
     font-weight: 650;
 }
 
-.header .header-menu {
+.header-content .header-menu {
     display: flex;
     text-align: center;
     list-style: none;
     justify-content: space-between;
 }
+
+.header-content .account-buttons {
+    display: flex;
+    text-align: center;
+    width: 300px;
+    justify-content: space-between;
+}
+
+
+.header-content .logo-main {width: 191px; height: 115px}
+
+.header-content .header-icons {display: flex; justify-content: space-between; width: 120px}
+
+.header-content .account-entrance {
+    display: flex;
+    width: 152px;
+    height: 58px;
+    color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    background-color: #00AEFFBF;
+    border-radius: 5px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 20px
+}
+
 
 .header-menu li {
     text-decoration: none;
@@ -30,15 +58,3 @@
     font-size: 20px;
     margin-left: 30px;
 }
-
-.account-buttons {
-    display: flex;
-    text-align: center;
-    width: 300px;
-    justify-content: space-between;
-}
-
-
-.logo-main {width: 191px; height: 115px}
-
-.header-icons {display: flex; justify-content: space-between; width: 120px}
