@@ -15,6 +15,7 @@
     width: 100%;
     font-size: 24px;
     font-weight: 650;
+    font-family: Roboto, sans-serif;
 }
 
 .header-content .header-menu {
@@ -24,33 +25,6 @@
     justify-content: space-between;
 }
 
-.header-content .account-buttons {
-    display: flex;
-    text-align: center;
-    width: 300px;
-    justify-content: space-between;
-}
-
-
-.header-content .logo-main {width: 191px; height: 115px}
-
-.header-content .header-icons {display: flex; justify-content: space-between; width: 120px}
-
-.header-content .account-entrance {
-    display: flex;
-    width: 152px;
-    height: 58px;
-    color: #FFFFFF;
-    justify-content: center;
-    align-items: center;
-    background-color: #00AEFFBF;
-    border-radius: 5px;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-size: 20px
-}
-
-
 .header-menu li {
     text-decoration: none;
     display: inline-flex;
@@ -58,3 +32,27 @@
     font-size: 20px;
     margin-left: 30px;
 }
+
+
+.header-content .logo-main {width: 191px; height: 115px}
+
+.header-content .header-icons {display: flex; justify-content: space-between; width: 120px}
+
+
+.header-content .account-buttons {display: flex; justify-content: space-between; width: 310px}
+
+.account-buttons div {
+    border-radius: 5px;
+    display: flex;
+    width: 152px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.account-buttons .account-entrance {background-color: #00AEFFBF}
+
+.account-buttons .account-registration {background-color: #F44545}
