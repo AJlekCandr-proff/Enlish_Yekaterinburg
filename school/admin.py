@@ -1,3 +1,20 @@
+from django.contrib.admin import ModelAdmin
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+
+@admin.register(Students)
+class StudentsAdmin(ModelAdmin):
+    list_display = ['']
+    search_fields = []
+
+
+@admin.register(Teachers)
+class TeachersAdmin(ModelAdmin):
+    list_display = []
+
+
+@admin.register(Lessons)
+class LessonsAdmin(ModelAdmin):
+    list_display = []
