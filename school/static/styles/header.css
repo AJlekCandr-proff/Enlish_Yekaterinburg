@@ -18,7 +18,19 @@
     font-family: Roboto, sans-serif;
 }
 
-.header-content .header-menu {
+
+.header-content .header-navigation, .header-account {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.header-navigation {width: 500px}
+
+.header-menu {
     display: flex;
     text-align: center;
     list-style: none;
@@ -34,10 +46,11 @@
 }
 
 
+.header-account {width: 450px}
+
 .header-content .logo-main {width: 191px; height: 115px}
 
-.header-content .header-icons {display: flex; justify-content: space-between; width: 120px}
-
+.header-content .header-icons {display: flex; justify-content: space-between; width: 85px}
 
 .header-content .account-buttons {display: flex; justify-content: space-between; width: 310px}
 
