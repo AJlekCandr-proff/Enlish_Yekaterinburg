@@ -1,4 +1,35 @@
 html, body {height: 100%; margin: 0}
 
+h1 {text-align: center}
+
 
 .account-page {width: 1440px; margin-inline: auto; font-family: Roboto, sans-serif}
+
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.user {width: 680px; display: flex; justify-content: space-between}
+
+.profile-avatar {height: 450px; width: 450px}
+
+.user-information {display: flex; flex-direction: column; justify-items: left}
+
+
+.profile-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-settings input, button {margin-top: 10px}
