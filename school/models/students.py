@@ -20,3 +20,7 @@ class Students(Model):
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
+
+    @classmethod
+    def get_object_or_404(cls, user):
+        pass
