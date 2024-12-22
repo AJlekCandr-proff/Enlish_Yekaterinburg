@@ -36,6 +36,6 @@ def account(request: HttpRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    user_profile = get_object_or_404(Students)
+    user_profile = Students.objects.first()
 
     return render(request, '../templates/school/pages/account.html', {'user_profile': user_profile})
