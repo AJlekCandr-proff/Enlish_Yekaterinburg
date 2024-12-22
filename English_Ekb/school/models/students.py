@@ -10,7 +10,7 @@ class Students(Model):
     avatar = ImageField(verbose_name='Фото профиля')
     password = CharField(max_length=15, verbose_name='Пароль от аккаунта')
     mail = EmailField(verbose_name='Электронная почта')
-    phone = EmailField(verbose_name='Номер телефона')
+    phone = CharField(verbose_name='Номер телефона')
 
     class Meta:
         db_table_comment = 'Table with student accounts.'
