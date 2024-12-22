@@ -17,8 +17,7 @@ def index(request: HttpRequest) -> HttpResponse:
 
 
 def teachers(request: HttpRequest) -> HttpResponse:
-    """
-    Функция представления для страницы предподавателей.
+    """ Функция представления для страницы предподавателей.
 
     :param request: Объект класса HttpRequest.
 

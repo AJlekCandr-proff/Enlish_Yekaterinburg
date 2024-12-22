@@ -62,7 +62,6 @@ JAZZMIN_SETTINGS = {
     "navigation_expanded": True,
     "show_sidebar": True,
     "site_brand": "Панель",
-    # "language_chooser": True,
 }
 
 
