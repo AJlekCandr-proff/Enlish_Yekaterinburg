@@ -1,12 +1,11 @@
 from django.db.models import Model, DateField, FileField, CharField, URLField, ManyToManyField
-from django.utils import timezone
 
 from .students import Students
 
 
 class Lessons(Model):
     title = CharField(max_length=25, verbose_name='Тема урока')
-    date = DateField(verbose_name='Дата урока', default=timezone.now())
+    date = DateField(verbose_name='Дата урока')
     optional_material = FileField(verbose_name='Материал к уроку')
     teacher_name = CharField(verbose_name='ФИО предподавателя')
     link_to_lesson = URLField(verbose_name='Ссылка на урок (конференцию)')
