@@ -1,0 +1,22 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'styles/header.css' %}" rel="stylesheet" type="text/css">
+    {% block head %}{% endblock %}
+    <title>{% block title %}Онлайн-школа английского в Екатеринбурге{% endblock %}</title>
+
+</head>
+
+<body>
+<main>
+    {% include "school/components/header.html" %}
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>
