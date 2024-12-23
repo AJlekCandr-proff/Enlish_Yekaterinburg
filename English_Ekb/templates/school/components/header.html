@@ -1,43 +1,33 @@
 {% load static %}
 
-<html lang="ru">
-    <head>
-        <link href="{% static 'styles/header.css' %}" rel="stylesheet" type="text/css">
+<div class="header-main">
+    <div class="header-content">
+        <div class="header-navigation">
+            <img class="logo-main" src="{% static 'media/logo/logo-main.svg' %}" alt="logo-header.svg"/>
 
-        <title>Заголовок</title>
-    </head>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="/English_Ekb/school/static">О школе</a></li>
+                    <li><a>Уроки</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <body>
-        <div class="header-main">
-            <div class="header-content">
-                <div class="header-navigation">
-                    <img class="logo-main" src="{% static 'media/logo/logo-main.svg' %}" alt="logo-header.svg"/>
+        <div class="header-account">
+            <div class="header-icons">
+                <a><img src="{% static 'media/icons/vk-icon.svg' %}" alt="vk-icon.svg"/></a>
+                <a><img src="{% static 'media/icons/telegram-icon.svg' %}" alt="telegram-icon.svg"/></a>
+            </div>
 
-                    <nav>
-                        <ul class="header-menu">
-                            <li><a href="/English_Ekb/school/static">О школе</a></li>
-                            <li><a>Уроки</a></li>
-                        </ul>
-                    </nav>
+            <div class="account-buttons">
+                <div class="account-entrance">
+                    <a href="{% url 'school:account' %}">Вход</a>
                 </div>
 
-                <div class="header-account">
-                    <div class="header-icons">
-                        <a><img src="{% static 'media/icons/vk-icon.svg' %}" alt="vk-icon.svg"/></a>
-                        <a><img src="{% static 'media/icons/telegram-icon.svg' %}" alt="telegram-icon.svg"/></a>
-                    </div>
-
-                    <div class="account-buttons">
-                        <div class="account-entrance">
-                            <a href="{% url 'school:account' %}">Вход</a>
-                        </div>
-
-                        <div class="account-registration">
-                            <a>Регистрация</a>
-                        </div>
-                    </div>
+                <div class="account-registration">
+                    <a>Регистрация</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>

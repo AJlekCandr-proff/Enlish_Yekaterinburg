@@ -1,52 +1,49 @@
+{% extends 'school/base.html' %}
 {% load static %}
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Личный кабинет</title>
 
-        <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'styles/account.css' %}" type="text/css">
-    </head>
+{% block head %}
+    <link rel="stylesheet" href="{% static 'styles/account.css' %}" type="text/css">
+{% endblock %}
 
-    <body>
-        <main>
-            {% include "school/components/header.html" %}
+{% block title %}
+    Личный кабинет - {{ block.super }}
+{% endblock %}
 
-            <div class="account-page">
-                <div class="profile">
-                    <h1>Профиль</h1>
+{% block content %}
+    <div class="account-page">
+        <div class="profile">
+            <h1>Профиль</h1>
 
-                    <div class="profile-information">
-                        <div class="user">
-                            <img class="profile-avatar" src="{{ user_profile.avatar.url }}" alt="profile-avatar.svg"/>
+            <div class="profile-information">
+                <div class="user">
+                    <img class="profile-avatar" src="{{ user_profile.avatar.url }}" alt="profile-avatar.svg"/>
 
-                            <div style=" font-family: Manrope, sans-serif; font-size: 32px; font-weight: 500;" class="user-information">
-                                    <p>{{ user_profile.first_name }} {{ user_profile.last_name  }} {{ user_profile.patronymic }}</p>
-                                    <p>{{ user_profile.phone }}</p>
-                                    <p>{{ user_profile.mail }}</p>
-                            </div>
-                        </div>
-
-                        <div class="profile-settings">
-                            <h2>Сменить пароль</h2>
-
-                            <label>
-                                <input/>
-                            </label>
-
-                            <label>
-                                <input/>
-                            </label>
-
-                            <button>Сменить пароль</button>
-                        </div>
+                    <div style=" font-family: Manrope, sans-serif; font-size: 32px; font-weight: 500;"
+                         class="user-information">
+                        <p>{{ user_profile.first_name }} {{ user_profile.last_name }} {{ user_profile.patronymic }}</p>
+                        <p>{{ user_profile.phone }}</p>
+                        <p>{{ user_profile.mail }}</p>
                     </div>
                 </div>
 
-                <div class="lessons">
-                    <h1>Мои занятия</h1>
+                <div class="profile-settings">
+                    <h2>Сменить пароль</h2>
+
+                    <label>
+                        <input/>
+                    </label>
+
+                    <label>
+                        <input/>
+                    </label>
+
+                    <button>Сменить пароль</button>
                 </div>
             </div>
-        </main>
-    </body>
-</html>
+        </div>
+
+        <div class="lessons">
+            <h1>Мои занятия</h1>
+        </div>
+    </div>
+{% endblock %}

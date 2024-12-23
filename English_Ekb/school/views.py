@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
 from .models.lessons import Students
 
@@ -13,23 +13,23 @@ def index(request: HttpRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, '../templates/school/pages/home.html')
+    return render(request, 'school/pages/home.html')
 
 
 def teachers(request: HttpRequest) -> HttpResponse:
-    """ Функция представления для страницы предподавателей.
+    """ Функция представления для страницы преподавателей.
 
     :param request: Объект класса HttpRequest.
 
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, '../school/pages/teachers.html')
+    return render(request, 'school/pages/teachers.html')
 
 
 def account(request: HttpRequest) -> HttpResponse:
     """
-    Функция представления для страницы личного кабинета предподавателя или студента.
+    Функция представления для страницы личного кабинета преподавателя или студента.
 
     :param request: Объект класса HttpRequest.
 
@@ -38,4 +38,4 @@ def account(request: HttpRequest) -> HttpResponse:
 
     user_profile = Students.objects.first()
 
-    return render(request, '../templates/school/pages/account.html', {'user_profile': user_profile})
+    return render(request, 'school/pages/account.html', {'user_profile': user_profile})

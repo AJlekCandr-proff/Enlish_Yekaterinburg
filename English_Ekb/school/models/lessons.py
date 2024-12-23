@@ -7,7 +7,7 @@ class Lessons(Model):
     title = CharField(max_length=25, verbose_name='Тема урока')
     date = DateField(verbose_name='Дата урока')
     optional_material = FileField(verbose_name='Материал к уроку')
-    teacher_name = CharField(verbose_name='ФИО предподавателя')
+    teacher_name = CharField(verbose_name='ФИО преподавателя')
     link_to_lesson = URLField(verbose_name='Ссылка на урок (конференцию)')
     pupils = ManyToManyField(Students, related_name='lessons', verbose_name='Ученики')
 

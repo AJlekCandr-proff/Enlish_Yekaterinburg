@@ -6,7 +6,7 @@ class Students(Model):
     last_name = CharField(verbose_name='Фамилия')
     patronymic = CharField(verbose_name='Отчество')
     age = PositiveSmallIntegerField(verbose_name='Возраст')
-    full_name_teacher = CharField(verbose_name='ФИО предподавателя')
+    full_name_teacher = CharField(verbose_name='ФИО преподавателя')
     avatar = ImageField(verbose_name='Фото профиля')
     password = CharField(max_length=15, verbose_name='Пароль от аккаунта')
     mail = EmailField(verbose_name='Электронная почта')
