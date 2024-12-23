@@ -16,17 +16,21 @@ h1 {text-align: center}
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    font-family: Manrope, sans-serif;
-    font-size: 32px;
-    font-weight: 500;
 }
 
 .user {width: 680px; display: flex; justify-content: space-between}
 
 .profile-avatar {height: 450px; width: 400px}
 
-.user-information {display: flex; flex-direction: column; justify-items: left; width: 560px}
-
+.user-information {
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    width: 560px;
+    font-family: Manrope, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
 
 .profile-settings {
     display: flex;

@@ -5,7 +5,7 @@
         <title>Личный кабинет</title>
 
         <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static './styles/account.css' %}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'styles/account.css' %}" type="text/css">
     </head>
 
     <body>
@@ -20,10 +20,10 @@
                         <div class="user">
                             <img class="profile-avatar" src="{{ user_profile.avatar.url }}" alt="profile-avatar.svg"/>
 
-                            <div class="user-information">
-                                <p>{{ user_profile.first_name }} {{ user_profile.last_name  }} {{ user_profile.patronymic }}</p>
-                                <p>{{ user_profile.phone }}</p>
-                                <p>{{ user_profile.mail }}</p>
+                            <div style=" font-family: Manrope, sans-serif; font-size: 32px; font-weight: 500;" class="user-information">
+                                    <p>{{ user_profile.first_name }} {{ user_profile.last_name  }} {{ user_profile.patronymic }}</p>
+                                    <p>{{ user_profile.phone }}</p>
+                                    <p>{{ user_profile.mail }}</p>
                             </div>
                         </div>
 

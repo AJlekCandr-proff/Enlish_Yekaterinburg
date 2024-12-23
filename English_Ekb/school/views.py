@@ -24,7 +24,7 @@ def teachers(request: HttpRequest) -> HttpResponse:
     :return: Объект класса HttpResponse.
     """
 
-    return render(request, '../templates/school/pages/teachers.html')
+    return render(request, '../school/pages/teachers.html')
 
 
 def account(request: HttpRequest) -> HttpResponse:
