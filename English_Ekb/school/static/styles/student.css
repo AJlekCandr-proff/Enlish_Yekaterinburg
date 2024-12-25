@@ -1,13 +1,14 @@
 h1 {text-align: center}
 
+input, button {margin-top: 10px}
+
+body {margin: 0}
+
 
 .account-page {width: 1440px; margin-inline: auto; font-family: Roboto, sans-serif}
 
 
-.profile {
-    display: flex;
-    flex-direction: column;
-}
+.profile {display: flex; flex-direction: column}
 
 .profile-information {
     display: flex;
@@ -16,11 +17,17 @@ h1 {text-align: center}
     align-items: flex-start;
 }
 
-.user {width: 800px; display: flex; justify-content: space-between}
-
 .profile-avatar {height: 450px; width: 350px; border-radius: 5px}
 
-.user-information {
+.profile-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.student {width: 800px; display: flex; justify-content: space-between}
+
+.student-information {
     display: flex;
     flex-direction: column;
     justify-items: left;
@@ -29,12 +36,4 @@ h1 {text-align: center}
     font-weight: 600;
 }
 
-.personal {font-size: 30px;}
-
-.profile-settings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-settings input, button {margin-top: 10px}
+.student-personal {font-size: 24px; margin: 0 50px 0 40px; width: 550px}

@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 
-from .models.lessons import Students
+from .models.lessons import Students, Lessons
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -38,4 +38,13 @@ def account(request: HttpRequest) -> HttpResponse:
 
     user_profile = Students.objects.first()
 
-    return render(request, 'school/pages/account.html', {'user_profile': user_profile})
+    if user_profile:
+        user_lessons = Lessons.objects.filter(pupils__first_name=user_profile.first_name)
+    else:
+        user_lessons = []
+
+    return render(
+        request=request,
+        template_name='school/pages/account.html',
+        context={'user_profile': user_profile, 'user_lessons': user_lessons}
+    )

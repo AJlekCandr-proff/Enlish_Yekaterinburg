@@ -5,7 +5,8 @@
 {% block head %}
     <title>{% block title %}Личный кабинет{% endblock %}</title>
 
-        <link rel="stylesheet" href="{% static 'styles/student.css' %}" type="text/css">
+    <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'styles/student.css' %}" rel="stylesheet" type="text/css">
 
 {% endblock %}
 
@@ -15,10 +16,10 @@
             <h1>Профиль</h1>
 
             <div class="profile-information">
-                <div class="user">
+                <div class="student">
                     <img class="profile-avatar" src="{{ user_profile.avatar.url }}" alt="profile-avatar.svg"/>
 
-                    <div class="personal">
+                    <div class="student-personal">
                         <p>{{ user_profile.first_name }} {{ user_profile.last_name  }} {{ user_profile.patronymic }}</p>
                         <p>{{ user_profile.phone }}</p>
                         <p>{{ user_profile.mail }}</p>
@@ -43,6 +44,18 @@
 
         <div class="lessons">
             <h1>Мои занятия</h1>
+
+            {% if user_lessons.length > 0 %}
+                <div>
+
+                </div>
+
+            {% else %}
+                <div>
+                    нет занятий
+                </div>
+            {% endif %}
+
         </div>
     </div>
 
