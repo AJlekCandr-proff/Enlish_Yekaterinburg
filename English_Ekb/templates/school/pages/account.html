@@ -1,12 +1,12 @@
-{% extends 'school/base.html' %}
+{% extends 'school/base.html'%}
+
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'styles/account.css' %}" type="text/css">
-{% endblock %}
+    <title>{% block title %}Личный кабинет{% endblock %}</title>
 
-{% block title %}
-    Личный кабинет - {{ block.super }}
+        <link rel="stylesheet" href="{% static 'styles/student.css' %}" type="text/css">
+
 {% endblock %}
 
 {% block content %}
@@ -18,9 +18,8 @@
                 <div class="user">
                     <img class="profile-avatar" src="{{ user_profile.avatar.url }}" alt="profile-avatar.svg"/>
 
-                    <div style=" font-family: Manrope, sans-serif; font-size: 32px; font-weight: 500;"
-                         class="user-information">
-                        <p>{{ user_profile.first_name }} {{ user_profile.last_name }} {{ user_profile.patronymic }}</p>
+                    <div class="personal">
+                        <p>{{ user_profile.first_name }} {{ user_profile.last_name  }} {{ user_profile.patronymic }}</p>
                         <p>{{ user_profile.phone }}</p>
                         <p>{{ user_profile.mail }}</p>
                     </div>
@@ -46,4 +45,5 @@
             <h1>Мои занятия</h1>
         </div>
     </div>
+
 {% endblock %}
