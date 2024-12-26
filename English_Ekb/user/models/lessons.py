@@ -1,6 +1,6 @@
 from django.db.models import Model, DateField, FileField, CharField, URLField, ManyToManyField
 
-from English_Ekb.user.models.students import Students
+from .students import Students
 
 
 class Lessons(Model):
