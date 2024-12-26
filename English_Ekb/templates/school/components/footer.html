@@ -4,20 +4,24 @@
 <div class="the-footer">
     <div class="footer-content">
         <div class="footer-info">
-            <img src="" alt="logo-dark.svg"/>
+            <img class="logo-dark" src="{% static 'media/logo/logo-dark.svg' %}" alt="logo-dark.svg"/>
 
             <div class="footer-contacts">
-                <nav>
-                    <ul>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Реквизиты</a></li>
-                    </ul>
-                </nav>
+                <div class="menu-contacts">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Контакты</a></li>
+                            <li><a href="#">Реквизиты</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
                 <div class="icons-links">
-                    <img src="" alt="icon-telegram.svg"/>
-                    <img src="" alt="icon-vk.svg"/>
-                    <img src="" alt="icon-whatsapp.svg"/>
+                    <div class="icons">
+                        <img src="{% static 'media/icons/vk-icon-dark.svg' %}" alt="icon-vk.svg"/>
+                        <img src="{% static 'media/icons/telegram-icon-dark.svg' %}" alt="icon-telegram.svg"/>
+                        <img src="{% static 'media/icons/whatsapp-icon-dark.svg' %}" alt="icon-whatsapp.svg"/>
+                    </div>
                 </div>
             </div>
         </div>
