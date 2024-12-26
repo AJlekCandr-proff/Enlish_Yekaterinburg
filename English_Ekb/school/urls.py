@@ -9,5 +9,7 @@ app_name = 'school'
 urlpatterns = [
     path('', index, name='index'),
     path('teachers', teachers, name='teachers'),
-    path('account', account, name='account')
+    path('account', account, name='account'),
+    path('login', login, name='login'),
+    path('registration', registration, 'registration')
 ]
