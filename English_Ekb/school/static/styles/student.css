@@ -36,6 +36,15 @@ body {margin: 0}
 
 .profile-settings input:focus {border: none}
 
+.button-password {
+    border: none;
+    background-color: #00AEFFBF;
+    color: #FFFFFF;
+    width: 225px;
+    height: 60px;
+    border-radius: 5px;
+}
+
 
 .student {width: 800px; display: flex; justify-content: space-between}
 
