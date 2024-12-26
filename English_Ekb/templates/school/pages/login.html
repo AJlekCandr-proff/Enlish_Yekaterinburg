@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="{% static 'styles/index.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'styles/page/login.css' %}" rel="stylesheet" type="text/css">
 
         <title>{% block title %}Вход в личный кабинет{% endblock %}</title>
     </head>
@@ -16,7 +17,29 @@
         <main>
             <div class="container">
                 {% block content %}
+                    <div class="login-page">
+                       <img class="logo" src="{% static 'media/logo/logo-main.svg' %}" alt="logo-main.svg"/>
 
+                       <div class="login-form">
+                           <p>Вход в личный кабинет</p>
+
+                           <label>
+                               <input type="email" placeholder="Email / Телефон"/>
+                           </label>
+
+                           <label>
+                               <input type="password" placeholder="Пароль"/>
+                           </label>
+
+                           <a>Забыли пароль?</a>
+
+                           <button>Войти</button>
+                       </div>
+
+                       <div>
+
+                       </div>
+                    </div>
                 {% endblock %}
             </div>
         </main>
