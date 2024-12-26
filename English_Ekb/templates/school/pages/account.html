@@ -6,7 +6,7 @@
     <title>{% block title %}Личный кабинет{% endblock %}</title>
 
     <link href="{% static 'styles/base.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'styles/student.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'styles/student-account.css' %}" rel="stylesheet" type="text/css">
 
 {% endblock %}
 
@@ -30,11 +30,11 @@
                     <h2>Сменить пароль</h2>
 
                     <label>
-                        <input placeholder="Существующий пароль"/>
+                        <input type="password" placeholder="Существующий пароль"/>
                     </label>
 
                     <label>
-                        <input placeholder="Новый пароль"/>
+                        <input type="password" placeholder="Новый пароль"/>
                     </label>
 
                     <button class="button-password">Сменить пароль</button>
@@ -52,7 +52,9 @@
 
             {% else %}
                 <div class="none-lessons">
-                    <p>Нет занятий</p>
+                    <p>У вас еще нет занятий.</p>
+
+                    <button class="record-to-lesson">Хочу уроки английского!</button>
                 </div>
             {% endif %}
 
