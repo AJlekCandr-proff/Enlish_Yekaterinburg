@@ -7,8 +7,8 @@ from .models import Students, Lessons
 
 
 class LoginCustomView(LoginView):
-    authentication_form = LoginForm
-    template_name = 'school/login.html'
+    authentication_form = LoginStudentForm
+    template_name = 'user/pages/login.html'
     extra_context = {'title': 'Вход в личный кабинет'}
 
     def get_success_url(self):
@@ -36,18 +36,6 @@ def account(request: HttpRequest) -> HttpResponse:
         template_name='school/pages/account.html',
         context={'user_profile': user_profile, 'user_lessons': user_lessons}
     )
-
-
-def login(request: HttpRequest) -> HttpResponse:
-    """
-    Функция представления для входа в личный кабинет студента или предподавателя.
-
-    :param request: Объект класса HttpRequest.
-
-    :return: Объект класса HttpResponse.
-    """
-
-    return render(request=request, template_name='school/pages/login.html')
 
 
 def registration(request: HttpRequest) -> HttpResponse:

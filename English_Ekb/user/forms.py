@@ -1,23 +1,24 @@
-from django.forms import EmailField, PasswordInput
+from django.forms import EmailField, PasswordInput, TextInput, CharField
 from django.contrib.auth.forms import AuthenticationForm
+
 from django.contrib.auth.models import User
 
 
 class LoginStudentForm(AuthenticationForm):
     mail = EmailField(
         label='Email',
-        widget=forms.TextInput(attrs={
+        widget=TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'Введите ваш Email'
+            'placeholder': 'Email'
         })
     )
 
     password = CharField(
         max_length=128,
         label='Пароль',
-        widget=forms.PasswordInput(attrs={
+        widget=PasswordInput(attrs={
             'class': 'form-control',
-            'placeholder': 'Введите пароль'
+            'placeholder': 'Пароль'
         })
     )
 
