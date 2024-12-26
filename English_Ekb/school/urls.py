@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import index, teachers, account
+from .views import *
+
 
 app_name = 'school'
 
