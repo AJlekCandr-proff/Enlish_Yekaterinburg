@@ -4,12 +4,16 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path('', include('school.urls', namespace='home')),
-    path('account', include('school.urls', namespace='account')),
-    path('teachers', include('school.urls', namespace='teachers'))
+    path('teachers', include('school.urls', namespace='teachers')),
+    path('account', include('user.urls', namespace='account')),
+    path('login', include('user.urls', namespace='login')),
+    path('registration', include('user.urls', namespace='registration'))
 )
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
