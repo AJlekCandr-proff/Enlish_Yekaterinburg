@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="{% static 'styles/index.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'styles/page/login.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'styles/pages/login.css' %}" rel="stylesheet" type="text/css">
 
         <title>{% block title %}Вход в личный кабинет{% endblock %}</title>
     </head>
@@ -36,9 +36,15 @@
                            <button>Войти</button>
                        </div>
 
-                       <div>
+                        <div class="account-buttons">
+                            <div class="account-entrance">
+                                <a href="{% url 'school:login' %}">Вход</a>
+                            </div>
 
-                       </div>
+                            <div class="account-registration">
+                                <a href="{% url 'school:registration' %}">Регистрация</a>
+                            </div>
+                        </div>
                     </div>
                 {% endblock %}
             </div>
