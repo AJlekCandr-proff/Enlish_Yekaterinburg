@@ -25,6 +25,18 @@ body {margin: 0}
     align-items: center;
 }
 
+.profile-settings input {
+    border-radius: 6px;
+    height: 95px;
+    width: 480px;
+    border: solid 2px #AAAAAA;
+    color: #AAAAAA;
+    padding: 15px;
+}
+
+.profile-settings input:focus {border: none}
+
+
 .student {width: 800px; display: flex; justify-content: space-between}
 
 .student-information {
