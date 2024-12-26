@@ -1,7 +1,18 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.views import LoginView
 
+from .forms import LoginStudentForm
 from .models import Students, Lessons
+
+
+class LoginCustomView(LoginView):
+    authentication_form = LoginForm
+    template_name = 'school/login.html'
+    extra_context = {'title': 'Вход в личный кабинет'}
+
+    def get_success_url(self):
+        return reverse_lazy('user:account')
 
 
 def account(request: HttpRequest) -> HttpResponse:
