@@ -1,7 +1,7 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
-from English_Ekb.school.models import Students, Lessons
+from .models import Students, Lessons
 
 
 def account(request: HttpRequest) -> HttpResponse:
