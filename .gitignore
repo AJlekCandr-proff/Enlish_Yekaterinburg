@@ -4,4 +4,4 @@
 **/__pycache__
 *.pyc
 .env
-./English_Ekb/media
+/English_Ekb/media/

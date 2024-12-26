@@ -1,4 +1,4 @@
-.header-main {
+.the-header {
     display: flex;
     background-color: #AFF4FF;
     width: 100%;
@@ -6,7 +6,7 @@
 }
 
 
-.header-main .header-content {
+.the-header .header-content {
     margin: 20px 100px 20px 100px;
     display: flex;
     flex-direction: row;
