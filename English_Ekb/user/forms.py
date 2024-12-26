@@ -1,0 +1,5 @@
+
+
+
+class LoginStudentForm(AuthenticationForm):
+    pass
