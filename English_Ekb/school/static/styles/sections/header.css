@@ -5,7 +5,6 @@
     height: 200px;
 }
 
-
 .the-header .header-content {
     margin: 20px 100px 20px 100px;
     display: flex;
@@ -36,12 +35,13 @@
     justify-content: space-between;
 }
 
-.header-menu li {
+.link-to-lessons, .link-to-home {
     text-decoration: none;
     display: inline-flex;
     font-family: Roboto, sans-serif;
     font-size: 20px;
     margin-left: 30px;
+    color: #373737;
 }
 
 
@@ -53,7 +53,7 @@
 
 .header-content .account-buttons {display: flex; justify-content: space-between; width: 310px}
 
-.account-buttons div {
+.account-entrance, .account-registration {
     border-radius: 5px;
     display: flex;
     width: 152px;
