@@ -9,9 +9,7 @@ urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path('', include('school.urls', namespace='home')),
     path('teachers', include('school.urls', namespace='teachers')),
-    path('account', include('user.urls', namespace='account')),
-    path('login', include('user.urls', namespace='login')),
-    path('registration', include('user.urls', namespace='registration'))
+    path('user/', include('user.urls', namespace='user')),
 )
 
 
