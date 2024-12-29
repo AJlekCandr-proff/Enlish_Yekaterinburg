@@ -1,6 +1,6 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, TemplateView
 
 from .forms import LoginStudentForm
 from .models import Students, Lessons
@@ -8,6 +8,7 @@ from .models import Students, Lessons
 
 class LoginCustomView(LoginView):
     authentication_form = LoginStudentForm
+
     template_name = 'user/pages/login.html'
     extra_context = {'title': 'Вход в личный кабинет'}
 
@@ -15,27 +16,24 @@ class LoginCustomView(LoginView):
         return reverse_lazy('user:account')
 
 
-def account(request: HttpRequest) -> HttpResponse:
-    """
-    Функция представления для страницы личного кабинета преподавателя или студента.
+class UserProfileView(TemplateView):
+    template_name = 'user/pages/account.html'
 
-    :param request: Объект класса HttpRequest.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    :return: Объект класса HttpResponse.
-    """
+        try:
+            user = get_object_or_404(Students, mail=self.kwargs.get('mail'))
 
-    user_profile = Students.objects.first()
+        except User.DoesNotExist:
+            raise Http404("Пользователь не найден")
 
-    if user_profile:
-        user_lessons = Lessons.objects.filter(pupils__first_name=user_profile.first_name)
-    else:
-        user_lessons = []
+        context['user_profile'] = user
+        context['user_profile'] = user
 
-    return render(
-        request=request,
-        template_name='school/pages/account.html',
-        context={'user_profile': user_profile, 'user_lessons': user_lessons}
-    )
+        context['title'] = f'Профиль пользователя {user}'
+
+        return context
 
 
 def registration(request: HttpRequest) -> HttpResponse:

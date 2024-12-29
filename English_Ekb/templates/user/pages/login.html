@@ -21,7 +21,7 @@
                         <img class="logo" src="{% static 'media/logo/logo-main.svg' %}" alt="logo-main.svg"/>
 
                         <div class="login-form">
-                            <form>
+                            <form method="post">
                                 {% csrf_token %}
 
                                 {% if form.non_field_errors %}
@@ -31,6 +31,18 @@
                                 {% endif %}
                                      <p>{{ form.mail }}</p>
                                      <p>{{ form.password }}</p>
+
+                                     {% if form.mail.errors %}
+                                         <div>
+                                             {{ form.mail.errors }}
+                                         </div>
+                                     {% endif %}
+
+                                     {% if form.password.errors %}
+                                         <div>
+                                             {{ form.password.errors }}
+                                         </div>
+                                     {% endif %}
 
                                 <div class="login">
                                     <a href="#">Забыли пароль?</a>
