@@ -10,7 +10,7 @@
         <link href="{% static 'styles/index.css' %}" rel="stylesheet" type="text/css">
         <link href="{% static 'styles/pages/login.css' %}" rel="stylesheet" type="text/css">
 
-        <title>{% block title %}Вход в личный кабинет{% endblock %}</title>
+        <title>{% block title %}{{ title }}{% endblock %}</title>
     </head>
 
     <body>
@@ -29,20 +29,10 @@
                                         {{ form.non_field_errors }}
                                     </div>
                                 {% endif %}
-                                     <p>{{ form.mail }}</p>
-                                     <p>{{ form.password }}</p>
 
-                                     {% if form.mail.errors %}
-                                         <div>
-                                             {{ form.mail.errors }}
-                                         </div>
-                                     {% endif %}
-
-                                     {% if form.password.errors %}
-                                         <div>
-                                             {{ form.password.errors }}
-                                         </div>
-                                     {% endif %}
+                                {% for field in form %}
+                                    <p>{{ field }}</p>
+                                {% endfor %}
 
                                 <div class="login">
                                     <a href="#">Забыли пароль?</a>

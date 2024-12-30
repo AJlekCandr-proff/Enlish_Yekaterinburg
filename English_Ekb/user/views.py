@@ -1,9 +1,10 @@
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.http import HttpRequest, HttpResponse, Http404
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.views import LoginView, TemplateView
+from django.urls import reverse_lazy
 
 from .forms import LoginStudentForm
-from .models import Students, Lessons
+from .models import Students
 
 
 class LoginCustomView(LoginView):
@@ -13,7 +14,7 @@ class LoginCustomView(LoginView):
     extra_context = {'title': 'Вход в личный кабинет'}
 
     def get_success_url(self):
-        return reverse_lazy('user:account')
+        return reverse_lazy('school:account')
 
 
 class UserProfileView(TemplateView):
@@ -25,7 +26,7 @@ class UserProfileView(TemplateView):
         try:
             user = get_object_or_404(Students, mail=self.kwargs.get('mail'))
 
-        except User.DoesNotExist:
+        except Students.DoesNotExist:
             raise Http404("Пользователь не найден")
 
         context['user_profile'] = user

@@ -1,18 +1,10 @@
-from django.forms import EmailField, PasswordInput, TextInput, CharField, EmailInput
+from django.forms import PasswordInput, CharField
 from django.contrib.auth.forms import AuthenticationForm
 
-from .models.students import Students
+from .models import Students
 
 
 class LoginStudentForm(AuthenticationForm):
-    mail = EmailField(
-        label='mail',
-        widget=EmailInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Email'
-        })
-    )
-
     password = CharField(
         max_length=15,
         label='password',
@@ -24,4 +16,4 @@ class LoginStudentForm(AuthenticationForm):
 
     class Meta:
         model = Students
-        fields = ['mail', 'password']
+        fields = ['password']
