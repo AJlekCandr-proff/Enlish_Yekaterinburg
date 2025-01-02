@@ -1,8 +1,8 @@
 from .students import Students
 
 from .teachers import Teachers
-from .administrator import Administrator
 from .students import Students
+from .customuser import CustomUser
 
 
-__all__ = ('Students', 'Teachers', 'Administrator')
+__all__ = ('Students', 'Teachers', 'CustomUser')
