@@ -3,12 +3,12 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.views import LoginView, TemplateView
 from django.urls import reverse_lazy
 
-from .forms import LoginStudentForm
-from .models import Students
+from .forms import LoginUserForm
+from .models import CustomUser
 
 
 class LoginCustomView(LoginView):
-    authentication_form = LoginStudentForm
+    authentication_form = LoginUserForm
 
     template_name = 'user/pages/login.html'
     extra_context = {'title': 'Вход в личный кабинет'}
@@ -24,9 +24,9 @@ class UserProfileView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         try:
-            user = get_object_or_404(Students, mail=self.kwargs.get('mail'))
+            user = get_object_or_404(CustomUser, mail=self.kwargs.get('mail'))
 
-        except Students.DoesNotExist:
+        except CustomUser.DoesNotExist:
             raise Http404("Пользователь не найден")
 
         context['user_profile'] = user

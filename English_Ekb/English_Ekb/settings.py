@@ -27,9 +27,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'school.apps.SchoolConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
 ]
 
+
+AUTH_USER_MODEL = 'user.CustomUser'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -110,8 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
-AUTH_USER_MODEL = 'user.CustomUser'
 
 LANGUAGE_CODE = "ru-ru"
 

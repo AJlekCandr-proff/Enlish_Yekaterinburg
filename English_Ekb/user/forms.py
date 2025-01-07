@@ -1,10 +1,10 @@
 from django.forms import PasswordInput, CharField
 from django.contrib.auth.forms import AuthenticationForm
 
-from .models import Students
+from .models import CustomUser
 
 
-class LoginStudentForm(AuthenticationForm):
+class LoginUserForm(AuthenticationForm):
     password = CharField(
         max_length=15,
         label='password',
@@ -15,5 +15,5 @@ class LoginStudentForm(AuthenticationForm):
     )
 
     class Meta:
-        model = Students
+        model = CustomUser
         fields = ['password']
