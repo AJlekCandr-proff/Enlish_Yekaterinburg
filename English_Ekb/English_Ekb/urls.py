@@ -8,7 +8,7 @@ from django.conf import settings
 urlpatterns = i18n_patterns(
     path("admin/", admin.site.urls),
     path('', include('school.urls', namespace='home')),
-    path('teachers', include('school.urls', namespace='teachers')),
+    path('teachers/', include('school.urls', namespace='teachers')),
     path('user/', include('user.urls', namespace='user')),
 )
 

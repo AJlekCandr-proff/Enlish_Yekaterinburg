@@ -14,7 +14,7 @@ class LoginCustomView(LoginView):
     extra_context = {'title': 'Вход в личный кабинет'}
 
     def get_success_url(self):
-        return reverse_lazy('school:account')
+        return reverse_lazy('user:profile')
 
 
 class UserProfileView(TemplateView):
@@ -24,7 +24,7 @@ class UserProfileView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         try:
-            user = get_object_or_404(CustomUser, mail=self.kwargs.get('mail'))
+            user = get_object_or_404(CustomUser, email=self.request.user)
 
         except CustomUser.DoesNotExist:
             raise Http404("Пользователь не найден")
