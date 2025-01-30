@@ -1,0 +1,71 @@
+.registration-page {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: 100px;
+    font-family: Manrope, sans-serif;
+    font-size: 24px;
+}
+
+
+.registration-form {
+    margin-top: 65px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #DAFAFF;
+    border: solid 1px #0084FF;
+    border-radius: 24px;
+    width: 400px;
+    height: 600px;
+    align-items: center;
+}
+
+.registration-form form p {display: flex; justify-content: center}
+
+.registration-form input {
+    margin-top: 10px;
+    width: 280px;
+    height: 65px;
+    border-radius: 6px;
+    border: 1px solid #AAAAAA;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.registration {display: flex; justify-content: center; flex-direction: column}
+
+.registration a {font-size: 20px; color: #000000; margin-top: 40px}
+
+.registration button {
+    margin-top: 65px;
+    width: 284px;
+    height: 68px;
+    background-color: #0084FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.logo {margin-top: 20px; height: 120px}
+
+
+.account-buttons {display: flex; justify-content: space-between; width: 310px}
+
+.account-entrance, .account-registration {
+    border-radius: 5px;
+    display: flex;
+    width: 152px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.account-entrance {background-color: #00AEFFBF}
+
+.account-registration {background-color: #F44545}
