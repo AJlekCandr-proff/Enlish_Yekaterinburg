@@ -31,7 +31,8 @@ INSTALLED_APPS = [
 ]
 
 
-AUTH_USER_MODEL = 'user.CustomUser'
+AUTH_USER_MODEL = 'user.CustomUserModel'
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -84,6 +85,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = "English_Ekb.wsgi.application"
 
 
@@ -97,6 +99,7 @@ DATABASES = {
         'PORT': int(os.environ.get('POSTGRES_PORT')),
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -113,6 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 LANGUAGE_CODE = "ru-ru"
 
 TIME_ZONE = "Europe/Moscow"
@@ -121,6 +125,7 @@ TIME_ZONE = "Europe/Moscow"
 USE_I18N = True
 
 USE_TZ = True
+
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static/'

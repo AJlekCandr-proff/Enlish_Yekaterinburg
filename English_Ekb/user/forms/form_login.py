@@ -1,7 +1,7 @@
 from django.forms import PasswordInput, CharField
 from django.contrib.auth.forms import AuthenticationForm
 
-from .models import CustomUser
+from ..models.users import CustomUserModel
 
 
 class LoginUserForm(AuthenticationForm):
@@ -15,5 +15,5 @@ class LoginUserForm(AuthenticationForm):
     )
 
     class Meta:
-        model = CustomUser
+        model = CustomUserModel
         fields = ['password']
