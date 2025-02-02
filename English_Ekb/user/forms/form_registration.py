@@ -1,19 +1,18 @@
-from django.forms import PasswordInput, CharField
-from django.contrib.auth.forms import UserCreationForm
+from django.forms import EmailInput, EmailField
+from django.contrib.auth.forms import BaseUserCreationForm
 
 from ..models.users import CustomUserModel
 
 
-class LoginUserForm(UserCreationForm):
-    password = CharField(
-        max_length=15,
-        label='password',
-        widget=PasswordInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Пароль'
-        })
+class RegistrationUserForm(BaseUserCreationForm):
+    email = EmailField(
+         label='email',
+         widget=EmailInput(attrs={
+             'class': 'form-control',
+             'placeholder': 'Электронная почта'
+         })
     )
 
     class Meta:
         model = CustomUserModel
-        fields = ['password']
+        fields = ['email']

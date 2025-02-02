@@ -8,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="{% static 'styles/index.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'styles/page/registration.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'styles/pages/registration.css' %}" rel="stylesheet" type="text/css">
 
-        <title>{% block title %}Регистрация аккаунта студента{% endblock %}</title>
+        <title>{% block title %}{{ title }}{% endblock %}</title>
     </head>
 
     <body>
@@ -31,12 +31,16 @@
                                 {% endif %}
 
                                 {% for field in form %}
+                                    <div>
+                                    <p>{{ field.errors }}</p>
+                                    </div>
+
                                     <p>{{ field }}</p>
                                 {% endfor %}
 
                                 <div class="registration">
                                     <a href="#">Забыли пароль?</a>
-                                    <button type="submit">Войти</button>
+                                    <button type="submit">Зарегистрироваться</button>
                                 </div>
                             </form>
                         </div>
