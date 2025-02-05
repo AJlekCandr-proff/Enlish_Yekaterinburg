@@ -15,13 +15,12 @@ class RegistrationUserView(CreateView):
     def form_valid(self, form):
         user = form.save()
 
-        subject = "Welcome to Our Site!"
-        message = f"Thank you for registering, {user.username}!"
-
-        from_email = settings.DEFAULT_FROM_EMAIL
-        recipient_list = [user.email]
-
-        send_mail(subject, message, from_email, recipient_list)
+        send_mail(
+            'Тестовое письмо',
+            'Это тестовое сообщение.',
+            settings.DEFAULT_FROM_EMAIL,
+            [user.email]
+        )
 
         return super().form_valid(form)
 
