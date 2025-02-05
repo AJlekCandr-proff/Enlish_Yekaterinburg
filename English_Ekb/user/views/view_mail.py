@@ -1,12 +1,21 @@
 from django.http import Http404
 from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
 
+from ..forms import ConfirmationCodeForm
 from ..models import CustomUserModel
 
 
-class ConfirmMailView(TemplateView):
+class ConfirmMailView(FormView):
     template_name = 'user/pages/mail.html'
+
+    form_class = ConfirmationCodeForm
+    success_url = reverse_lazy('user:profile')
+
+    def form_valid(self, form):
+        entered_code = form.cleaned_data.get('code')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
