@@ -1,4 +1,8 @@
-from django.urls import reverse_lazy
+import random
+
+from string import digits
+
+from django.urls import reverse
 from django.core.mail import send_mail
 from django.views.generic import CreateView
 from django.conf import settings
@@ -15,9 +19,11 @@ class RegistrationUserView(CreateView):
     def form_valid(self, form):
         user = form.save()
 
+        login_code = ''.join(random.choices(digits, k=6))
+
         send_mail(
-            'Тестовое письмо',
-            'Это тестовое сообщение.',
+            'Подтверждение входа',
+            f'Код для входа в аккаунт {login_code}',
             settings.DEFAULT_FROM_EMAIL,
             [user.email]
         )
@@ -25,4 +31,4 @@ class RegistrationUserView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('user:registration-confirm')
+        return reverse('user:registration-confirm', kwargs={'email': self.object.email})

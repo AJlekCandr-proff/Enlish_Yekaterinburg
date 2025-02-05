@@ -12,7 +12,7 @@ class ConfirmMailView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         try:
-            user = get_object_or_404(CustomUserModel, email=self.request.user)
+            user = get_object_or_404(CustomUserModel, email=kwargs.get('email'))
 
         except CustomUserModel.DoesNotExist:
             raise Http404("Пользователь не найден")
