@@ -22,14 +22,14 @@ class RegistrationUserView(CreateView):
         user = form.save(commit=False)
         user.code_from_mail = login_code
 
+        user.save()
+
         send_mail(
             'Подтверждение входа',
             f'Код для входа в аккаунт {login_code}',
             settings.DEFAULT_FROM_EMAIL,
             [user.email]
         )
-
-        user.save()
 
         return super().form_valid(form)
 

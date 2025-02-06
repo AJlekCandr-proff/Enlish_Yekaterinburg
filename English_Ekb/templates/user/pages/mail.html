@@ -20,11 +20,27 @@
                     <div class="mail-confirm-form">
                         <h1>Подтверждение почты</h1>
 
-                        {% for field in form %}
-                            <p>{{ field }}</p>
-                        {% endfor %}
+                        <div>
 
+                        <form method="post">
+                            {% csrf_token %}
+
+                            {% if form.non_field_errors %}
+                                <div>
+                                    {{ form.non_field_errors }}
+                                </div>
+                            {% endif %}
+
+                            {% for field in form %}
+                                <p>{{ field }}</p>
+                            {% endfor %}
+
+                            <div class="confirm">
+                                <button type="submit">Зарегистрироваться</button>
+                            </div>
+                        </form>
                     </div>
+
                 {% endblock %}
             </div>
         </main>

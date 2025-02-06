@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -26,6 +28,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'rest_framework_simplejwt',
     'school.apps.SchoolConfig',
     'user.apps.UserConfig',
 ]
@@ -115,6 +119,13 @@ DATABASES = {
     }
 }
 
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
