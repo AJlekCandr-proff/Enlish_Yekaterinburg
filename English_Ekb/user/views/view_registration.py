@@ -17,9 +17,10 @@ class RegistrationUserView(CreateView):
     extra_context = {'title': 'Регистрация нового пользователя'}
 
     def form_valid(self, form):
-        user = form.save()
-
         login_code = ''.join(random.choices(digits, k=6))
+
+        user = form.save(commit=False)
+        user.code_from_mail = login_code
 
         send_mail(
             'Подтверждение входа',
@@ -27,6 +28,8 @@ class RegistrationUserView(CreateView):
             settings.DEFAULT_FROM_EMAIL,
             [user.email]
         )
+
+        user.save()
 
         return super().form_valid(form)
 

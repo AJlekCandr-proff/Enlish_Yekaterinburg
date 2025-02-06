@@ -17,7 +17,14 @@
         <main>
             <div class="container">
                 {% block content %}
-                    <h1>Подтверждение почты</h1>
+                    <div class="mail-confirm-form">
+                        <h1>Подтверждение почты</h1>
+
+                        {% for field in form %}
+                            <p>{{ field }}</p>
+                        {% endfor %}
+
+                    </div>
                 {% endblock %}
             </div>
         </main>

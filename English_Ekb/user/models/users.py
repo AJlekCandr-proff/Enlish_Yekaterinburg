@@ -13,6 +13,8 @@ class CustomUserModel(AbstractBaseUser, PermissionsMixin):
     email = EmailField(verbose_name='Электронная почта', unique=True)
     phone = CharField(verbose_name='Номер телефона', blank=True)
 
+    code_from_mail = CharField(verbose_name='Код, отправленный по почту', blank=True)
+
     is_active = BooleanField(default=True)
     is_staff = BooleanField(default=False)
     is_superuser = BooleanField(default=False)
