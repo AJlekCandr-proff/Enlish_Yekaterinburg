@@ -2,6 +2,7 @@ from datetime import timedelta
 
 from pathlib import Path
 
+from django.conf import settings
 from dotenv import load_dotenv
 
 import os
@@ -124,8 +125,9 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY
+    "SIGNING_KEY": SECRET_KEY
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

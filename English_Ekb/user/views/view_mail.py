@@ -23,15 +23,16 @@ class ConfirmMailView(FormView):
 
         if entered_code == user.code_from_mail:
             refresh_token = RefreshToken.for_user(user)
+            refresh_token['email'] = user.email
 
             access_token = str(refresh_token.access_token)
 
             response = super().form_valid(form)
 
             response.set_cookie(
-                'Authorization',
+                key='Authorization',
                 value=access_token,
-                max_age=36000
+                max_age=36000,
             )
 
             return response
