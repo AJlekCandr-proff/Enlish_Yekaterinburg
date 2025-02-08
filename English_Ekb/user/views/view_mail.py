@@ -1,6 +1,6 @@
-import json
+from typing import Any
 
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
@@ -16,7 +16,7 @@ class ConfirmMailView(FormView):
 
     form_class = ConfirmationCodeForm
 
-    def form_valid(self, form):
+    def form_valid(self, form) -> HttpResponseRedirect:
         entered_code = form.cleaned_data.get('code')
 
         user = CustomUserModel.objects.get(email=self.kwargs.get('email'))
@@ -37,7 +37,7 @@ class ConfirmMailView(FormView):
 
             return response
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
 
         try:
@@ -50,5 +50,5 @@ class ConfirmMailView(FormView):
 
         return context
 
-    def get_success_url(self):
+    def get_success_url(self) -> str:
         return reverse_lazy('user:profile')

@@ -1,6 +1,5 @@
-from jwt import decode
+from typing import Any
 
-from django.conf import settings
 from django.http import Http404
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -12,18 +11,16 @@ from ..models import CustomUserModel
 class UserProfileView(TemplateView):
     template_name = 'user/pages/account.html'
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs) -> dict[str, Any] | str:
         context = super().get_context_data(**kwargs)
 
-        jwt_token = self.request.COOKIES.get('Authorization')
+        current_user = self.request.user
 
-        decoded_token = decode(jwt=jwt_token, algorithms=['HS256'], key=settings.SECRET_KEY)
-
-        if not decoded_token:
+        if not current_user:
             return reverse_lazy('user:login')
 
         try:
-            user = get_object_or_404(CustomUserModel, email=decoded_token.get('email'))
+            user = get_object_or_404(CustomUserModel, email=current_user)
 
         except CustomUserModel.DoesNotExist:
             raise Http404("Пользователь не найден")
