@@ -24,20 +24,10 @@ class RegistrationUserView(CreateView):
 
         return super().dispatch(request, *args, **kwargs)
 
-    def form_valid(self, form) -> HttpResponseRedirect:
-        login_code = ''.join(random.choices(digits, k=6))
-
-        user = form.save(commit=False)
-        user.code_from_mail = login_code
+    def form_valid(self, form: RegistrationUserForm) -> HttpResponseRedirect:
+        user = form.save()
 
         user.save()
-
-        send_mail(
-            'Подтверждение входа',
-            f'Код для входа в аккаунт {login_code}',
-            settings.DEFAULT_FROM_EMAIL,
-            [user.email]
-        )
 
         return super().form_valid(form)
 

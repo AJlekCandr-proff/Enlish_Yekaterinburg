@@ -63,7 +63,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "user.middleware.authentication_middleware.AuthenticationMiddleware"
+    "user.middlewares.authentication_middleware.AuthenticationMiddleware",
+    "user.middlewares.mail_middleware.EmailMiddleware"
 ]
 
 

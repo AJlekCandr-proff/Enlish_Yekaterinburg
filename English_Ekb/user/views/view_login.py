@@ -1,5 +1,5 @@
 from django.contrib.auth.views import LoginView
-from django.urls import reverse
+from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.http import HttpRequest, HttpResponse
 from ..forms import LoginUserForm
@@ -17,5 +17,10 @@ class LoginUserView(LoginView):
 
         return super().dispatch(request, *args, **kwargs)
 
+    def form_valid(self, form: LoginUserForm) -> HttpResponse:
+        self.email = form.cleaned_data.get('username')
+
+        return super().form_valid(form)
+
     def get_success_url(self) -> str:
-        return reverse('user:login-confirm', kwargs={'email': self.object.email})
+        return reverse_lazy('user:login-confirm', kwargs={'email': self.email})

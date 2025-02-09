@@ -12,11 +12,12 @@ from ..models import CustomUserModel
 
 
 class ConfirmMailView(FormView):
-    template_name = 'user/pages/mail.html'
-
     form_class = ConfirmationCodeForm
 
-    def form_valid(self, form) -> HttpResponseRedirect:
+    template_name = 'user/pages/mail.html'
+    extra_context = {'title': 'Подтверждение почты'}
+
+    def form_valid(self, form: ConfirmationCodeForm) -> HttpResponseRedirect:
         entered_code = form.cleaned_data.get('code')
 
         user = CustomUserModel.objects.get(email=self.kwargs.get('email'))
