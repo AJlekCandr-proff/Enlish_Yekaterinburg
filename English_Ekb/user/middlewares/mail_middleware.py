@@ -21,7 +21,7 @@ class EmailMiddleware:
     def __call__(self, request: HttpRequest) -> HttpResponse:
         path = request.path
 
-        if ('login/' or 'registration/') in path:
+        if re.match(r'^.+/(login/|registration/)[\w.-]+@[\w.-]+\.\w+', path) and request.method == 'GET':
             if 'login/' in path:
                 email = request.path.split('login/')[1]
 
@@ -34,13 +34,13 @@ class EmailMiddleware:
 
                 user.code_from_mail = login_code
 
+                user.save()
+
                 send_mail(
                     'Подтверждение входа',
-                    f'Код для входа в аккаунт {login_code}',
+                    f'Код для входа в аккаунт {user.code_from_mail}',
                     settings.DEFAULT_FROM_EMAIL,
                     [email]
                 )
-
-                user.save()
 
         return self._get_response(request)

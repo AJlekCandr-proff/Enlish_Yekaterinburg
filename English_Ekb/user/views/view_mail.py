@@ -1,7 +1,7 @@
 from typing import Any
 
 from django.http import Http404, HttpResponseRedirect
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 
@@ -37,6 +37,9 @@ class ConfirmMailView(FormView):
             )
 
             return response
+
+        else:
+            return redirect('user:login-confirm', kwargs={'email': user.email})
 
     def get_context_data(self, **kwargs) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)

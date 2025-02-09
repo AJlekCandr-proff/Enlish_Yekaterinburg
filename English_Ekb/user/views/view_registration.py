@@ -1,12 +1,6 @@
-import random
-
-from string import digits
-
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.urls import reverse
-from django.core.mail import send_mail
 from django.views.generic import CreateView
-from django.conf import settings
 from django.shortcuts import redirect
 
 from ..forms import RegistrationUserForm
