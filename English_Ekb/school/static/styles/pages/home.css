@@ -1,9 +1,54 @@
 .home-page {
-    width: 1440px;
+    max-width: 1920px;
+    min-width: 1440px;
     margin-inline: auto;
     font-family: Roboto, sans-serif;
     height: 100%;
+    position: relative;
 }
 
 
-.background-home {height: 850px; width: 100%}
+.home-preview {
+    max-width: 1920px;
+    width: 1855px;
+    /*width: 1920px;*/
+    height: 1080px;
+}
+
+
+.header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 50px 20px 50px;
+    align-items: center;
+}
+
+.header-menu .header-list-menu {
+    list-style: none;
+    display: inline-flex;
+    margin: 0 30px 0 30px;
+
+}
+
+.header-menu .header-list-menu li {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px 20px 5px 20px;
+}
+
+.header-icons {margin: 0 50px 0 50px; display: inline-flex}
+
+.header-icons a {margin: 5px; max-width: 30px; max-height: 30px}
+
+
+.account-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px 0 30px;
+}
+
+.account-entrance, .account-registration {margin: 5px}

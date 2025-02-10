@@ -8,9 +8,40 @@
 
 {% block content %}
     <div class="home-page">
-        <h1>Главная страница</h1>
+        <img class="home-preview" src="{% static 'media/photos/background.svg' %}" alt="background.svg"/>
 
-        <img class="background-home" src="" alt="background.svg"/>
+        <div class="header">
+            <div class="header-menu">
+                <nav>
+                    <ul class="header-list-menu">
+                        <li>О нас</li>
+                        <li>Уроки</li>
+                        <li>Отзывы</li>
+                        <li>Предподаватели</li>
+                        <li>Блог</li>
+                        <li>Speaking Club</li>
+                        <li>Пособия</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-icons">
+                <a href="#"><img src="{% static 'media/icons/vk-icon.svg' %}" alt="vk-icon.svg"/></a>
+                <a href="#"><img src="{% static 'media/icons/telegram-icon.svg' %}" alt="telegram-icon.svg"/></a>
+                <a href="#"><img src="{% static 'media/icons/instagram-icon.svg' %}" alt="instagram-icon.svg"/></a>
+            </div>
+
+            <div class="account-buttons">
+                <div class="account-entrance">
+                    <a href="{% url 'user:login' %}">Вход</a>
+                </div>
+
+                <div class="account-registration">
+                    <a href="{% url 'user:registration' %}">Регистрация</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 {% endblock %}
