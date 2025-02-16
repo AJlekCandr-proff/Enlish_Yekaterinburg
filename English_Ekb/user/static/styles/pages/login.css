@@ -1,60 +1,61 @@
 .login-page {
-    padding-top: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    margin-inline: 100px;
+    /*margin-inline: 100px;*/
     font-family: Manrope, sans-serif;
     font-size: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.background-page {
+    max-width: 1920px;
+    width: 1855px;
+    /*width: 1920px;*/
+    height: 100%;
+    max-height: 930px;
 }
 
 
-.login-form {
-    margin-top: 65px;
-    padding: 30px;
+.header {
+    position: absolute;
+    top: 15px;
+    left: 20px;
     display: flex;
-    flex-direction: column;
-    background-color: #DAFAFF;
-    border: solid 1px #0084FF;
-    border-radius: 24px;
-    width: 400px;
-    height: 600px;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px 50px 20px 50px;
     align-items: center;
 }
 
-.login-form form p {display: flex; justify-content: center}
+.header-menu .header-list-menu {
+    list-style: none;
+    display: inline-flex;
+    margin: 0 30px 0 30px;
 
-.login-form input {
-    margin-top: 10px;
-    width: 280px;
-    height: 65px;
-    border-radius: 6px;
-    border: 1px solid #AAAAAA;
+}
+
+.header-menu .header-list-menu li {
     font-size: 20px;
-    padding: 10px;
+    font-weight: 600;
+    margin: 5px 20px 5px 20px;
 }
 
-.login {display: flex; justify-content: center; flex-direction: column}
+.header-icons {margin: 0 40px 0 30px; display: inline-flex}
 
-.login a {font-size: 20px; color: #000000; margin-top: 40px}
+.header-icons a {margin: 5px; max-width: 30px; max-height: 30px}
 
-.login button {
-    margin-top: 65px;
-    width: 284px;
-    height: 68px;
-    background-color: #0084FF;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0 4px 4px 0 #00000040;
+
+.account-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px 0 20px;
+    justify-content: space-between
 }
-
-.logo {margin-top: 20px; height: 120px}
-
-
-.account-buttons {display: flex; justify-content: space-between; width: 310px}
 
 .account-entrance, .account-registration {
+    margin: 5px;
     border-radius: 5px;
     display: flex;
     width: 152px;
@@ -69,3 +70,72 @@
 .account-entrance {background-color: #00AEFFBF}
 
 .account-registration {background-color: #F44545}
+
+.logo {margin-top: 20px; height: 120px}
+
+
+.login-content {
+    top: 20%;
+    left: 40%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: solid 1px #0084FF;
+    border-radius: 24px;
+    max-width: 420px;
+    width: 400px;
+    max-height: 620px;
+    height: 600px;
+    align-items: center;
+}
+
+.header-form {font-size: 24px; margin: 60px 10px 50px 10px}
+
+.login-form form p {display: flex; justify-content: center}
+
+.login-form input {
+    margin-top: 10px;
+    width: 280px;
+    height: 65px;
+    border-radius: 6px;
+    border: 1px solid #AAAAAA;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+.login .reset-password {
+    display: flex;
+    margin: 10px;
+    justify-content: right;
+}
+
+.login a {
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none
+}
+
+.login .login-button {
+    margin-top: 30px;
+    width: 284px;
+    height: 68px;
+    background-color: #9DCBFF;
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 #00000040;
+}

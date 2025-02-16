@@ -50,9 +50,6 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-SERVER_EMAIL = EMAIL_HOST_USER
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -63,7 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "user.middlewares.authentication_middleware.AuthenticationMiddleware",
+    "user.middlewares.authentication_middleware.UserAuthenticationMiddleware",
     "user.middlewares.mail_middleware.EmailMiddleware"
 ]
 

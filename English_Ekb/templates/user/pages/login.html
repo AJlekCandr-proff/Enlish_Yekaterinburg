@@ -18,37 +18,66 @@
             <div class="container">
                 {% block content %}
                     <div class="login-page">
-                        <img class="logo" src="{% static 'media/logo/logo-main.svg' %}" alt="logo-main.svg"/>
+                        <img class="background-page" src="{% static 'media/photos/background-user.svg' %}" alt="background.svg"/>
 
-                        <div class="login-form">
-                            <form method="post">
-                                {% csrf_token %}
+                        <div class="header">
+                            <img class="logo" src="{% static 'media/logo/logo-main.svg' %}" alt="logo-main.svg"/>
 
-                                {% if form.non_field_errors %}
-                                    <div>
-                                        {{ form.non_field_errors }}
-                                    </div>
-                                {% endif %}
+                            <div class="header-menu">
+                                <nav>
+                                    <ul class="header-list-menu">
+                                        <li>О нас</li>
+                                        <li>Уроки</li>
+                                        <li>Отзывы</li>
+                                        <li>Предподаватели</li>
+                                        <li>Блог</li>
+                                        <li>Speaking Club</li>
+                                        <li>Пособия</li>
+                                    </ul>
+                                </nav>
+                            </div>
 
-                                {% for field in form %}
-                                    <p>{{ field }}</p>
-                                {% endfor %}
+                            <div class="header-icons">
+                                <a href="#"><img src="{% static 'media/icons/vk-icon.svg' %}" alt="vk-icon.svg"/></a>
+                                <a href="#"><img src="{% static 'media/icons/telegram-icon.svg' %}" alt="telegram-icon.svg"/></a>
+                                <a href="#"><img src="{% static 'media/icons/instagram-icon.svg' %}" alt="instagram-icon.svg"/></a>
+                            </div>
 
-                                <div class="login">
-                                    <a href="#">Забыли пароль?</a>
-                                    <button type="submit">Войти</button>
+                            <div class="account-buttons">
+                                <div class="account-entrance">
+                                    <a href="{% url 'user:login' %}">Вход</a>
                                 </div>
-                            </form>
+
+                                <div class="account-registration">
+                                    <a href="{% url 'user:registration' %}">Регистрация</a>
+                                </div>
+                            </div>
                         </div>
 
-                         <div class="account-buttons">
-                             <div class="account-entrance">
-                                 <a href="{% url 'user:login' %}">Вход</a>
-                             </div>
+                        <div class="login-content">
+                            <div class="login-form">
+                                <form method="post">
+                                    <p class="header-form">Вход в личный кабинет</p>
 
-                             <div class="account-registration">
-                                 <a href="{% url 'user:registration' %}">Регистрация</a>
-                             </div>
+                                    {% csrf_token %}
+
+                                    {% if form.non_field_errors %}
+                                        <div>
+                                            {{ form.non_field_errors }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% for field in form %}
+                                        <p>{{ field }}</p>
+                                    {% endfor %}
+
+                                    <div class="login">
+                                        <p class="reset-password"><a href="#">Забыли пароль?</a></p>
+
+                                        <button class="login-button" type="submit">Войти</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
 

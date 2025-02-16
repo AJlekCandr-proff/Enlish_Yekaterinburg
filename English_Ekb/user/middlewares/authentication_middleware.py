@@ -6,12 +6,12 @@ from django.conf import settings
 from django.http import HttpRequest, HttpResponse
 
 
-class AuthenticationMiddleware:
+class UserAuthenticationMiddleware:
     def __init__(self, get_response: Callable[[HttpRequest], HttpResponse]) -> None:
         self._get_response = get_response
 
     def __call__(self, request: HttpRequest) -> HttpResponse:
-        if '/user' in request.path:
+        if request.path.startswith(f'{request.scheme}://{request.get_host()}/user/'):
             jwt_token = request.COOKIES.get('Authorization')
 
             if jwt_token:

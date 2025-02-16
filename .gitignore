@@ -1,7 +1,0 @@
-.idea
-.vscode
-.git
-**/__pycache__
-*.pyc
-.env
-/English_Ekb/media/

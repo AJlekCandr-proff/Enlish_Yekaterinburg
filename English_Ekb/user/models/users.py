@@ -5,6 +5,11 @@ from ..managers.user_manager import CustomUserManager
 
 
 class CustomUserModel(AbstractBaseUser, PermissionsMixin):
+    ROLE = [
+        ('Teacher', 'Предподаватель'),
+        ('Student', 'Студент')
+    ]
+
     first_name = CharField(verbose_name='Имя')
     last_name = CharField(verbose_name='Фамилия')
     patronymic = CharField(verbose_name='Отчество', blank=True)
@@ -18,6 +23,8 @@ class CustomUserModel(AbstractBaseUser, PermissionsMixin):
     is_active = BooleanField(default=True)
     is_staff = BooleanField(default=False)
     is_superuser = BooleanField(default=False)
+
+    role = CharField(choices=ROLE, verbose_name='Роль пользователя', blank=True)
 
     objects = CustomUserManager()
 
