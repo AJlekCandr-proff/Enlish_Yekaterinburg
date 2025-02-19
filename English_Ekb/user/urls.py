@@ -11,5 +11,6 @@ urlpatterns = [
     path('login/', LoginUserView.as_view(), name='login'),
     path('login/<str:email>', ConfirmMailView.as_view(), name='login-confirm'),
     path('registration/', RegistrationUserView.as_view(), name='registration'),
-    path('registration/<str:email>', ConfirmMailView.as_view(), name='registration-confirm')
+    path('registration/<str:email>', ConfirmMailView.as_view(), name='registration-confirm'),
+    path('schedule/', ScheduleView.as_view(), name='schedule')
 ]

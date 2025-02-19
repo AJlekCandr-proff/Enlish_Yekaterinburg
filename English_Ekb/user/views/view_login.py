@@ -7,9 +7,10 @@ from ..forms import LoginUserForm
 
 class LoginUserView(LoginView):
     authentication_form = LoginUserForm
-
     template_name = 'user/pages/login.html'
     extra_context = {'title': 'Вход в личный кабинет'}
+
+    email: str | None = None
 
     def dispatch(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         if self.request.user:

@@ -6,7 +6,7 @@
     <title>{% block title %}Личный кабинет{% endblock %}</title>
 
     <link href="{% static 'styles/index.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'styles/pages/student-account.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'styles/pages/account.css' %}" rel="stylesheet" type="text/css">
 
 {% endblock %}
 
@@ -25,26 +25,34 @@
                         <p>{{ user_profile.email }}</p>
                     </div>
                 </div>
+
+                {% if user_profile.role == 'Teacher' %}
+                    <div class="button-schedule">
+                        <a class="edit-schedule-link" href="{% url 'user:schedule' %}">Редактировать расписание</a>
+                    </div>
+                {% endif %}
             </div>
         </div>
 
-        <div class="lessons">
-            <h1>Мои занятия</h1>
+        {% if user_profile.role == 'Student' %}
+            <div class="lessons">
+                <h1>Мои занятия</h1>
 
-            {% if user_lessons.length > 0 %}
-                <div>
+                {% if user_lessons.length > 0 %}
+                    <div>
 
-                </div>
+                    </div>
 
-            {% else %}
-                <div class="none-lessons">
-                    <p>У вас еще нет занятий.</p>
+                {% else %}
+                    <div class="none-lessons">
+                        <p>У вас еще нет занятий.</p>
 
-                    <button class="record-to-lesson">Хочу уроки английского!</button>
-                </div>
-            {% endif %}
+                        <button class="record-to-lesson">Хочу уроки английского!</button>
+                    </div>
+                {% endif %}
+            </div>
 
-        </div>
+        {% endif %}
     </div>
 
 {% endblock %}

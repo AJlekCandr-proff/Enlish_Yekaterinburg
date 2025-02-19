@@ -11,7 +11,7 @@ class UserAuthenticationMiddleware:
         self._get_response = get_response
 
     def __call__(self, request: HttpRequest) -> HttpResponse:
-        if request.path.startswith(f'{request.scheme}://{request.get_host()}/user/'):
+        if request.path.startswith('/ru/user/'):
             jwt_token = request.COOKIES.get('Authorization')
 
             if jwt_token:
