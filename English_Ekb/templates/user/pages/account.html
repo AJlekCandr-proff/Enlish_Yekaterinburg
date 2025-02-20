@@ -25,12 +25,6 @@
                         <p>{{ user_profile.email }}</p>
                     </div>
                 </div>
-
-                {% if user_profile.role == 'Teacher' %}
-                    <div class="button-schedule">
-                        <a class="edit-schedule-link" href="{% url 'user:schedule' %}">Редактировать расписание</a>
-                    </div>
-                {% endif %}
             </div>
         </div>
 
@@ -50,8 +44,62 @@
                         <button class="record-to-lesson">Хочу уроки английского!</button>
                     </div>
                 {% endif %}
-            </div>
 
+            </div>
+        {% else %}
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Понедельник</th>
+                            <th>Вторник</th>
+                            <th>Среда</th>
+                            <th>Четверг</th>
+                            <th>Пятница</th>
+                            <th>Суббота</th>
+                            <th>Воскресенье</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>10.00</th>
+                            <td>Иванов</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <th>11.00</th>
+                            <td>Бобров</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <th>22.00</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Петрушки</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="button-schedule"><a href="{% url 'user:schedule' %}">Редактировать расписание</a></div>
+            </div>
         {% endif %}
     </div>
 
